@@ -208,7 +208,7 @@ for generation=1:no_generations
             if ~isempty(emptyx > 0)
                 j = ceil(rand*length(emptyx));
                 lattice(emptyx(j)+1,emptyy(j)+1) = length(Prey{1}(:,1,1)) + 1;
-                for layeer = 1:length(Prey)
+                for layer = 1:length(Prey)
                 Prey{layer} = [Prey{layer}; Prey_new{layer}(i,:,:)];
                 end
                 break

@@ -23,14 +23,14 @@ function f_EvoDN_net(parameters)
 	Beta = in\out;
     hold on
  	modelout = in*Beta;
-%     plot(out,modelout,'kd','LineWidth', 2)
-%     pol = polyfit(out,modelout,1);
-%     ylim=get(gca,'ylim');
-%     xlim=get(gca,'xlim');
-%     text(xlim(1)+0.1*(xlim(2)-xlim(1)),ylim(2),['\fontsize{12} \color{red} Slope =' num2str(pol(1))])
-%     pol = pol(1)*out + pol(2);
-%     plot(out,pol, '.-b', 'LineWidth', 2)
-    plot([1:no_points],out,'--o',[1:no_points],modelout,'-or')
+    plot(out,modelout,'kd','LineWidth', 2)
+    pol = polyfit(out,modelout,1);
+    ylim=get(gca,'ylim');
+    xlim=get(gca,'xlim');
+    text(xlim(1)+0.1*(xlim(2)-xlim(1)),ylim(2),['\fontsize{12} \color{red} Slope =' num2str(pol(1))])
+    pol = pol(1)*out + pol(2);
+    plot(out,pol, '.-b', 'LineWidth', 2)
+   % plot([1:no_points],out,'--o',[1:no_points],modelout,'-or')
     hold off
 
 end

@@ -13,12 +13,14 @@ function [errorVal,F2,Beta,InfoC] = DNevalnet(net)
 	no_layer = length(net);
 	complexity = ones(1,size(in,2));
 	k = 0;
+	cnet = net;
 	for layer = 1:no_layer  %-1?
+		%cnet{layer} = logical(cnet{layer});
 		in = in*net{layer}(2:end,:);
 		bias = net{layer}(1,:);
 		in = in+bias;
 		in = 1./(1+exp(-in));
-		complexity = complexity*abs(net{layer}(2:end,:));
+		complexity = complexity*abs(cnet{layer}(2:end,:));
 		k = k+ length(find(net{layer}));
 	end
 	complexity = sum(complexity);
